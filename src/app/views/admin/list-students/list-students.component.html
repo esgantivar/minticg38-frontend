@@ -1,1 +1,7 @@
-<p>list-students works!</p>
+
+<ul>
+  <li *ngFor="let item of students">
+    {{item.first_name}} {{item.last_name}}
+    <button (click)="verDetalle(item)">Ver detalle</button>
+  </li>
+</ul>

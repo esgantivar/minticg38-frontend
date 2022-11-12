@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { Component } from "@angular/core";
 
 @Component({
@@ -5,5 +6,9 @@ import { Component } from "@angular/core";
   templateUrl: "./home-admin.component.html"
 })
 export class HomeAdminComponent {
-
+  constructor(private authService: AuthService) {
+  }
+  public logout() {
+    this.authService.logout();
+  }
 }

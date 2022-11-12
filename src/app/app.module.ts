@@ -1,3 +1,5 @@
+import { AdminService } from './services/admin.service';
+import { AuthService } from './services/auth.service';
 import { ListStudentsComponent } from './views/admin/list-students/list-students.component';
 import { LoginComponent } from './views/login/login.component';
 import { HomeAdminComponent } from './views/admin/home/home-admin.component';
@@ -12,6 +14,8 @@ import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeStudentComponent } from './views/student/home-student/home-student.component';
+import { StudentDetailComponent } from './views/admin/student-detail/student-detail.component';
 
 
 @NgModule({
@@ -19,19 +23,23 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     ListStudentsComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    HomeStudentComponent,
+    StudentDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule, //nos permite comunicarnos via http con nuestro gateway
     InputTextModule,
     PasswordModule,
     ButtonModule,
     CardModule
   ],
   providers: [
+    AuthService,
+    AdminService
   ],
   bootstrap: [AppComponent]
 })

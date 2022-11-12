@@ -1,0 +1,59 @@
+<h1>Información detallada del estudiante</h1>
+
+<div *ngIf="!student">Cargando información...</div>
+
+<p-card *ngIf="student">
+  <div class="margen-abajo-50px">
+    <span class="p-float-label w-100">
+      <input
+        class="w-100"
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="student.first_name"
+      />
+      <label for="float-input">Nombre</label>
+    </span>
+  </div>
+  <div class="margen-abajo-50px">
+    <span class="p-float-label w-100">
+      <input
+        class="w-100"
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="student.last_name"
+      />
+      <label for="float-input">Apellidos</label>
+    </span>
+  </div>
+  <div class="margen-abajo-50px">
+    <span class="p-float-label w-100">
+      <input
+        class="w-100"
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="student.cedula"
+      />
+      <label for="float-input">Documento</label>
+    </span>
+  </div>
+  <div class="margen-abajo-50px">
+    <span class="p-float-label w-100">
+      <input
+        class="w-100"
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="student.email"
+      />
+      <label for="float-input">Email</label>
+    </span>
+  </div>
+  <div class="centrar-contenido">
+    <button pButton label="Actualizar" class="p-button-success mr-10px" (click)="update()"></button>
+    <button pButton label="Borrar" class="p-button-danger" (click)="delete()"></button>
+
+  </div>
+</p-card>
