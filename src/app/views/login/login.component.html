@@ -1,0 +1,43 @@
+<div class="contenedor">
+  <p-card>
+    <h3 class="centrar-contenido">Login</h3>
+
+    <div class="margen-abajo-50px">
+      <span class="p-float-label p-input-icon-left w-100">
+            <i class="pi pi-user"></i>
+            <input class="w-100" id="float-input" type="text" pInputText [(ngModel)]="username">
+
+        <label for="float-input">Nombre de usuario</label>
+      </span>
+    </div>
+    <div class="margen-abajo-50px">
+      <span class="p-float-label p-input-icon-left w-100">
+        <i class="pi pi-key"></i>
+        <input class="w-100" type="password" id="password-input" pPassword [(ngModel)]="password"/>
+        <label for="password-input">Contraseña</label>
+      </span>
+    </div>
+    <div class="centrar-contenido">
+      <p-button label="INGRESAR" (click)="login()" icon="pi pi-sign-in" iconPos="right"></p-button>
+    </div>
+  </p-card>
+  </div>
+  <style>
+    .margen-abajo-50px {
+      margin-bottom: 25px;
+    }
+
+    .contenedor {
+      max-width: 400px;
+      margin-top: 20%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .w-100 {
+      width: 100%;
+    }
+    .centrar-contenido {
+      text-align: center;
+    }
+  </style>
