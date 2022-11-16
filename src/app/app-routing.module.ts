@@ -1,3 +1,4 @@
+import { AdminGuard } from './services/admin.guard';
 import { StudentDetailComponent } from './views/admin/student-detail/student-detail.component';
 import { HomeStudentComponent } from './views/student/home-student/home-student.component';
 import { ListStudentsComponent } from './views/admin/list-students/list-students.component';
@@ -5,6 +6,7 @@ import { LoginComponent } from './views/login/login.component';
 import { HomeAdminComponent } from './views/admin/home/home-admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { StudentGuard } from './services/student.guard';
 
 const routes: Routes = [
   {
@@ -13,19 +15,23 @@ const routes: Routes = [
   },
   {
     path: "admin",
-    component: HomeAdminComponent
+    component: HomeAdminComponent,
+    canActivate: [AdminGuard]
   },
   {
     path: "admin/estudiantes",
-    component: ListStudentsComponent
+    component: ListStudentsComponent,
+    canActivate: [AdminGuard]
   },
   {
     path: "admin/estudiantes/:id",
-    component: StudentDetailComponent
+    component: StudentDetailComponent,
+    canActivate: [AdminGuard]
   },
   {
     path: "estudiante",
-    component: HomeStudentComponent
+    component: HomeStudentComponent,
+    canActivate: [StudentGuard]
   }
 ];
 

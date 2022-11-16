@@ -4,9 +4,36 @@
 .centrar-contenido {
   text-align: center;
 }
+
+.right-content {
+  text-align: right;
+}
+
 .margen-abajo-50px {
   margin-bottom: 25px;
 }
 .mr-10px {
   margin-right: 10px;
+}
+
+.p-button.mi-boton {
+  color: #ffffff;
+  background: #af22c54d;
+  border: 5px solid #010061;
+}
+
+.boton {
+  color: red;
+  background-color: aqua;
+  border: 5px dashed brown;
+  padding: 15px;
+  font-size: 28px;
+  border-radius: 50%;
+  margin-top: 50px;
+}
+
+.boton:hover {
+  cursor:progress;
+  background-color: aquamarine;
+  background-image: image("assets/casos-de-uso.png");
 }

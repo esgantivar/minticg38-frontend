@@ -1,5 +1,6 @@
 import { AdminService } from './services/admin.service';
 import { AuthService } from './services/auth.service';
+import { AdminGuard } from './services/admin.guard';
 import { ListStudentsComponent } from './views/admin/list-students/list-students.component';
 import { LoginComponent } from './views/login/login.component';
 import { HomeAdminComponent } from './views/admin/home/home-admin.component';
@@ -13,10 +14,12 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeStudentComponent } from './views/student/home-student/home-student.component';
 import { StudentDetailComponent } from './views/admin/student-detail/student-detail.component';
-
+import { StudentGuard } from './services/student.guard';
+import { JwtInterceptor } from './services/jwt-interceptor.interceptor';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -35,11 +38,19 @@ import { StudentDetailComponent } from './views/admin/student-detail/student-det
     InputTextModule,
     PasswordModule,
     ButtonModule,
-    CardModule
+    CardModule,
+    TableModule
   ],
   providers: [
     AuthService,
-    AdminService
+    AdminService,
+    AdminGuard,
+    StudentGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

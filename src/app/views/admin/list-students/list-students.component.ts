@@ -30,4 +30,8 @@ export class ListStudentsComponent implements OnInit {
   public verDetalle(student: any) {
     this.router.navigate(["/admin/estudiantes", student._id])
   }
+
+  public crearEstudiante() {
+    console.log("... vamos a crear un estudiante...")
+  }
 }

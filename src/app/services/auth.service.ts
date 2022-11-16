@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,7 +12,8 @@ export class AuthService {
   }
 
   public login(body: any) {
-    return this.httpClient.post(`http://127.0.0.1:5020/login`, body)
+    // return this.httpClient.post(environment.gatewayURL + '/login', body)
+    return this.httpClient.post(`${environment.gatewayURL}/login`, body)
   }
 
   public logout() {
