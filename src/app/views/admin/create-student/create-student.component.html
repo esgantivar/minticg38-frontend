@@ -1,7 +1,5 @@
 <app-admin-layout>
-  <h1>Información detallada del estudiante</h1>
-
-  <div *ngIf="!student">Cargando información...</div>
+  <h2>Crear estudiante</h2>
 
   <p-card *ngIf="student">
     <div class="margen-abajo-50px">
@@ -52,23 +50,32 @@
         <label for="float-input">Email</label>
       </span>
     </div>
+    <div class="margen-abajo-50px">
+      <span class="p-float-label w-100">
+        <input
+          class="w-100"
+          id="float-input"
+          type="text"
+          pInputText
+          [(ngModel)]="student.username"
+        />
+        <label for="float-input">Nombre de usuario</label>
+      </span>
+    </div>
+    <div class="margen-abajo-50px">
+      <span class="p-float-label w-100">
+        <input
+          class="w-100"
+          id="float-input"
+          type="password"
+          pInputText
+          [(ngModel)]="student.password"
+        />
+        <label for="float-input">Contraseña</label>
+      </span>
+    </div>
     <div class="right-content">
-      <span class="mr-10px"
-        ><button
-          pButton
-          label="Actualizar"
-          class="p-button-success"
-          (click)="update()"
-        ></button
-      ></span>
-      <span
-        ><button
-          pButton
-          label="Borrar"
-          class="p-button-danger"
-          (click)="delete()"
-        ></button
-      ></span>
+      <button pButton label="Crear" class="p-button-success" (click)="createStudent()"></button>
     </div>
   </p-card>
 </app-admin-layout>

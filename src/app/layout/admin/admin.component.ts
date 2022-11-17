@@ -1,17 +1,17 @@
+import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
-import { AuthService } from './../../../services/auth.service';
-import { Component, OnInit } from "@angular/core";
 import { MenuItem } from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-admin-home",
-  templateUrl: "./home-admin.component.html"
+  selector: 'app-admin-layout',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
 })
-export class HomeAdminComponent implements OnInit {
+export class AdminComponent implements OnInit {
   items: MenuItem[];
-  constructor(private authService: AuthService,
-    private router: Router) {
-  }
+
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.items = [

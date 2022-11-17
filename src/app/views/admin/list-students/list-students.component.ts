@@ -32,6 +32,6 @@ export class ListStudentsComponent implements OnInit {
   }
 
   public crearEstudiante() {
-    console.log("... vamos a crear un estudiante...")
+    this.router.navigateByUrl("/admin/estudiantes/crear");
   }
 }

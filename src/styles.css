@@ -1,5 +1,5 @@
 .w-100 {
-  width: 100%;
+  width: calc(100% - 5px) !important;
 }
 .centrar-contenido {
   text-align: center;
@@ -36,4 +36,8 @@
   cursor:progress;
   background-color: aquamarine;
   background-image: image("assets/casos-de-uso.png");
+}
+
+body {
+  margin: 0;
 }

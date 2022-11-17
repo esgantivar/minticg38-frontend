@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -26,7 +27,11 @@ export class AdminService {
     });
   }
 
-  public deleteStudent(id: string) {
+  public deleteStudent(id: string):Observable<any> {
     return this.httpClient.delete(`${environment.gatewayURL}/students/${id}`);
+  }
+
+  public createStudent(student:any) {
+    return this.httpClient.post(`${environment.gatewayURL}/students`, student);
   }
 }

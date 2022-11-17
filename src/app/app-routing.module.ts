@@ -1,3 +1,4 @@
+import { CreateStudentComponent } from './views/admin/create-student/create-student.component';
 import { AdminGuard } from './services/admin.guard';
 import { StudentDetailComponent } from './views/admin/student-detail/student-detail.component';
 import { HomeStudentComponent } from './views/student/home-student/home-student.component';
@@ -21,6 +22,11 @@ const routes: Routes = [
   {
     path: "admin/estudiantes",
     component: ListStudentsComponent,
+    canActivate: [AdminGuard]
+  },
+  {
+    path: "admin/estudiantes/crear",
+    component: CreateStudentComponent,
     canActivate: [AdminGuard]
   },
   {

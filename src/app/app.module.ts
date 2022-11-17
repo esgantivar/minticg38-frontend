@@ -20,6 +20,10 @@ import { StudentDetailComponent } from './views/admin/student-detail/student-det
 import { StudentGuard } from './services/student.guard';
 import { JwtInterceptor } from './services/jwt-interceptor.interceptor';
 import { TableModule } from 'primeng/table';
+import {MenuModule} from 'primeng/menu';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AdminComponent } from './layout/admin/admin.component';
+import { CreateStudentComponent } from './views/admin/create-student/create-student.component'
 
 @NgModule({
   declarations: [
@@ -28,10 +32,13 @@ import { TableModule } from 'primeng/table';
     ListStudentsComponent,
     HomeAdminComponent,
     HomeStudentComponent,
-    StudentDetailComponent
+    StudentDetailComponent,
+    AdminComponent,
+    CreateStudentComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule, //nos permite comunicarnos via http con nuestro gateway
@@ -39,7 +46,8 @@ import { TableModule } from 'primeng/table';
     PasswordModule,
     ButtonModule,
     CardModule,
-    TableModule
+    TableModule,
+    MenuModule,
   ],
   providers: [
     AuthService,
