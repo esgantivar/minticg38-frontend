@@ -29,10 +29,16 @@ export class AdminComponent implements OnInit {
       {
         label: 'Materias',
         icon: 'pi pi-fw pi-align-justify',
+        command: () => {
+          this.router.navigateByUrl("/admin/materias")
+        }
       },
       {
         label: 'Inscripciones',
         icon: 'pi pi-fw pi-pencil',
+        command: () => {
+          this.router.navigateByUrl("/admin/inscripciones")
+        }
       }
     ]
   }

@@ -1,0 +1,13 @@
+<app-admin-layout>
+  <p-card>
+    <h2>Detalle de una materia</h2>
+  <app-form-subject
+  *ngIf="subject"
+    [departments]="departments"
+    [subject]="subject"
+    [labelButton]="'Actualizar'"
+    (onSend)="update($event)"
+  >
+  </app-form-subject>
+  </p-card>
+</app-admin-layout>

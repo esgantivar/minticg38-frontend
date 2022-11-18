@@ -19,7 +19,7 @@ export class AdminService {
   }
 
   public updateStudent(student: any) {
-    return this.httpClient.put(`${environment.gatewayURL}/students/${student["_id"]}` , {
+    return this.httpClient.put(`${environment.gatewayURL}/students/${student["_id"]}`, {
       "cedula": student["cedula"],
       "email": student["email"],
       "first_name": student["first_name"],
@@ -27,11 +27,35 @@ export class AdminService {
     });
   }
 
-  public deleteStudent(id: string):Observable<any> {
+  public deleteStudent(id: string): Observable<any> {
     return this.httpClient.delete(`${environment.gatewayURL}/students/${id}`);
   }
 
-  public createStudent(student:any) {
+  public createStudent(student: any) {
     return this.httpClient.post(`${environment.gatewayURL}/students`, student);
+  }
+
+  public getSubjects() {
+    return this.httpClient.get(`${environment.gatewayURL}/subjects`);
+  }
+
+  public createSubject(body: any) {
+    return this.httpClient.post(`${environment.gatewayURL}/subjects`, body);
+  }
+
+  public deleteSubject(id: string) {
+    return this.httpClient.delete(`${environment.gatewayURL}/subjects/${id}`);
+  }
+
+  public getSubjectById(id: string) {
+    return this.httpClient.get(`${environment.gatewayURL}/subjects/${id}`);
+  }
+
+  public updateSubject(id:string, subject: any) {
+    return this.httpClient.put(`${environment.gatewayURL}/subjects/${id}`, subject);
+  }
+
+  public getDepartments() {
+    return this.httpClient.get(`${environment.gatewayURL}/departments`);
   }
 }

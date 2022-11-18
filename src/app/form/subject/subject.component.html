@@ -1,0 +1,36 @@
+<div class="margen-abajo-50px">
+  <span class="p-float-label w-100">
+    <input
+      class="w-100"
+      id="float-input"
+      type="text"
+      pInputText
+      [(ngModel)]="subject.name"
+    />
+    <label for="float-input">Nombre</label>
+  </span>
+</div>
+<div class="margen-abajo-50px">
+  <span class="p-float-label w-100">
+    <input
+      class="w-100"
+      id="float-input"
+      type="number"
+      pInputText
+      [(ngModel)]="subject.course_credits"
+    />
+    <label for="float-input">Creditos</label>
+  </span>
+</div>
+<div class="margen-abajo-50px">
+  <p-dropdown [options]="departments" optionLabel="name" styleClass="w-100" [(ngModel)]="subject.department"></p-dropdown>
+</div>
+
+<div class="right-content">
+  <button
+    pButton
+    [label]="labelButton"
+    class="p-button-success"
+    (click)="send()"
+  ></button>
+</div>

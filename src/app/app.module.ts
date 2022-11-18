@@ -23,7 +23,14 @@ import { TableModule } from 'primeng/table';
 import {MenuModule} from 'primeng/menu';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AdminComponent } from './layout/admin/admin.component';
-import { CreateStudentComponent } from './views/admin/create-student/create-student.component'
+import { CreateStudentComponent } from './views/admin/create-student/create-student.component';
+import { ListSubjectsComponent } from './views/admin/subjects/list-subjects/list-subjects.component';
+import { CreateSubjectComponent } from './views/admin/subjects/create-subject/create-subject.component';
+import { DetailSubjectComponent } from './views/admin/subjects/detail-subject/detail-subject.component'
+import {DropdownModule} from 'primeng/dropdown';
+import { SubjectComponent } from './form/subject/subject.component';
+import { ListRegistrationsComponent } from './views/admin/registrations/list-registrations/list-registrations.component';
+import { CreateRegistrationComponent } from './views/admin/registrations/create-registration/create-registration.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +41,13 @@ import { CreateStudentComponent } from './views/admin/create-student/create-stud
     HomeStudentComponent,
     StudentDetailComponent,
     AdminComponent,
-    CreateStudentComponent
+    CreateStudentComponent,
+    ListSubjectsComponent,
+    CreateSubjectComponent,
+    DetailSubjectComponent,
+    SubjectComponent,
+    ListRegistrationsComponent,
+    CreateRegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +61,7 @@ import { CreateStudentComponent } from './views/admin/create-student/create-stud
     CardModule,
     TableModule,
     MenuModule,
+    DropdownModule
   ],
   providers: [
     AuthService,

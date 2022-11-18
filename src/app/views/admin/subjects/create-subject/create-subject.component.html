@@ -1,0 +1,11 @@
+<app-admin-layout>
+  <p-card>
+    <h2>Crear materia</h2>
+    <app-form-subject
+      [departments]="departments"
+      [subject]="subject"
+      [labelButton]="'Crear'"
+      (onSend)="create($event)">
+    </app-form-subject>
+  </p-card>
+</app-admin-layout>
